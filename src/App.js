@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
 //Import the pages
 
@@ -6,27 +6,18 @@ import Page1 from "./Components/page1"
 import Page2 from "./Components/page2"
 import Page3 from "./Components/page3"
 
-//import css
-import "./app.css"
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <h1>Home Page</h1>
-          </Route>
-          <Route exact path="/page1">
-            <Page1 />
-          </Route>
-          <Route exact path="/page2">
-            <Page2 />
-          </Route>
-          <Route exact path="/page3">
-            <Page3 />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<h1>Home Page</h1>} />
+          <Route exact path="page1" element={<Page1 />} />
+          <Route exact path="page2" element={<Page2 />} />
+          <Route exact path="page3" element={<Page3 />} />
+        </Routes>
         <div className="list">
           <ul>
             <li><Link to="/">Home</Link></li>
